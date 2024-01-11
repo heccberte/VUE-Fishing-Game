@@ -23,6 +23,6 @@ export default {
 		background: url('../img/world_map.jpg');
 		background-repeat: no-repeat;
 		background-size: cover;
-		background-position: -250px;
+		background-position: -320px;
 	}
 </style>
