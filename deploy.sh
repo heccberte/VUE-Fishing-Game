@@ -17,9 +17,9 @@ git add -A
 git commit -m 'deploy'
 
 # если вы публикуете по адресу https://<USERNAME>.github.io
-git push -f git@github.com:heccberte/heccberte.github.io.git master
+
 
 # если вы публикуете по адресу https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
+git push -f git@github.com:heccberte/VUE_Fishing-game.git master:gh-pages
 
 cd -
