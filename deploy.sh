@@ -20,6 +20,6 @@ git commit -m 'deploy'
 
 
 # если вы публикуете по адресу https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:heccberte/VUE_Fishing-Game.git master:gh-pages
+git push -f git@github.com:heccberte/VUE-Fishing-Game.git master:gh-pages
 
 cd -
