@@ -1,5 +1,5 @@
 <template>
-	<div class="shop">
+	<div v-if="pageLoaded" class="shop">
 		<my-navbar v-model:money="money"></my-navbar>
 		<div class="shop__content">
 			<ul class="shop__items">
@@ -17,6 +17,7 @@
 			</ul>
 		</div>
 	</div>
+	<div class="pageLoad" v-else>Загрузка магазина...</div>
 </template>
 <script>
 import MyNavbar from '@/components/MyNavbar.vue'
@@ -27,6 +28,7 @@ export default {
 	data() {
 		return {
 			money: 0,
+			pageLoaded: false,
 			activeRod: {},
 			purchasedRods: [],
 			rods: [
@@ -99,6 +101,9 @@ export default {
 				localStorage.removeItem('rod');
 			}
 		};
+		setTimeout(() => {
+			this.pageLoaded = true;
+		},1000)
 	},
 	methods: {
 		buy(item) {
@@ -141,6 +146,11 @@ export default {
 	background: url('../img/shop.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
+	animation-duration: 1s;
+	animation-name: loading;
+}
+.pageLoad {
+	font-size: 26px;
 }
 
 .shop__content {
@@ -270,5 +280,14 @@ export default {
 	background: #976b42;
 	border: none;
 	border-radius: 0;
+}
+@keyframes loading {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
 </style>

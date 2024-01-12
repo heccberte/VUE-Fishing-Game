@@ -5,3 +5,4 @@ module.exports = defineConfig({
     ? '/VUE-Fishing-Game/'
     : '/'
 })
+т

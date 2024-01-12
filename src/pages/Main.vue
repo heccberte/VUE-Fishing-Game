@@ -1,5 +1,5 @@
 <template >
-	<div class="main__game">
+	<div v-if="pageLoaded" class="main__game">
 		<div class="main__content">
 			<h1 class="main__title">Русская рыбалка</h1>
 			<ul class="main__menu">
@@ -13,10 +13,20 @@
 			</ul>
 		</div>
 	</div>
+	<div class="pageLoad" v-else>Загрузка...</div>
 </template>
 <script>
 export default {
-	
+	data() {
+		return {
+			pageLoaded: false,
+		}
+	},
+	mounted() {
+		setTimeout(() => {
+			this.pageLoaded = true;
+		},1000)
+	}
 }
 </script>
 <style >
@@ -34,6 +44,11 @@ export default {
 	background: url('../img/mainhub.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
+	animation-duration: 1s;
+	animation-name: loading;
+}
+.pageLoad {
+	font-size: 26px;
 }
 
 .main__content {
@@ -64,6 +79,15 @@ export default {
 .main__menu-link:hover {
 	background: #00000050;
 	transform: scale(1.1);
+}
+@keyframes loading {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
 
 </style>
