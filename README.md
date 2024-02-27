@@ -1,3 +1,7 @@
+Ссылка: https://heccberte.github.io/VUE-Fishing-Game/
+
+Нет адаптивной версии. Проект сделан как первый опыт знакомства с Vue.js
+
 # fishing
 
 ## Project setup
